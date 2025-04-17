@@ -45,6 +45,15 @@ git push --all          # Push all branches
 git tag v1.0            # Create version tag
 git stash               # Save unstaged changes
 git stash pop           # Restore stashed changes
+# Backup your current branch
+git branch backup-main
+
+# Reset to match remote exactly
+git fetch origin
+git reset --hard origin/main
+
+# Reapply your changes (if needed)
+git cherry-pick ..backup-main
 
 7️⃣ LOG & HISTORY
 -----------------
